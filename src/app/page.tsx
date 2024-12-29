@@ -1,9 +1,11 @@
 import { Header } from "@/sections/Header";
+import { HeroSection } from "@/sections/Hero";
 
 export default function Home() {
   return (
-    <div className="flex justify-center items-center relative top-3">
+    <div>
       <Header />
+      <HeroSection />
     </div>
   );
 }
