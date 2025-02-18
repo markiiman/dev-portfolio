@@ -27,7 +27,7 @@ export const TapeSection = () => {
               "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
           }}
         >
-          <div className="flex flex-none gap-4 pr-4 py-3 animate-move-left [animation-duration:40s]">
+          <div className="flex flex-none gap-4 pr-4 py-3 animate-move-left [animation-duration:30s]">
             {[...new Array(2)].fill(0).map((_, index) => (
               <Fragment key={index}>
                 {words.map((word) => (

@@ -7,6 +7,7 @@ import SectionHeader from "@/components/SectionHeader";
 import grainImage from "@/assets/images/grain.jpg";
 import Image from "next/image";
 import Card from "@/components/Card";
+import { Fragment } from "react";
 
 const testimonials = [
   {
@@ -52,32 +53,36 @@ export const TestimonialsSection = () => {
         />
 
         <div
-          className="mt-16 flex overflow-x-clip lg:mt-24"
+          className="mt-12 flex overflow-x-clip lg:mt-20 py-4 -my-4"
           style={{
             maskImage:
               "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
           }}
         >
-          <div className="flex flex-none gap-8">
-            {testimonials.map((testimonial) => (
-              <Card key={testimonial.name} className="max-w-xs md:p-6 md:max-w-md">
-                <div className="flex gap-4 items-center">
-                  <div className="size-14 bg-gray-700 inline-flex rounded-full items-center justify-center flex-shrink-0">
-                    <Image
-                      src={testimonial.avatar}
-                      alt={testimonial.name}
-                      className="max-h-full"
-                    />
-                  </div>
-                  <div>
-                    <div className="font-semibold">{testimonial.name}</div>
-                    <div className="text-sm text-white/40">
-                      {testimonial.position}
+          <div className="flex flex-none gap-8 animate-move-left [animation-duration:90s] hover:[animation-play-state:paused]">
+            {[...new Array(2)].fill(0).map((_, index) => (
+              <Fragment key={index}>
+                {testimonials.map((testimonial) => (
+                  <Card key={testimonial.name} className="max-w-xs md:p-6 md:max-w-md hover:-rotate-3 transition duration-300">
+                    <div className="flex gap-4 items-center">
+                      <div className="size-14 bg-gray-700 inline-flex rounded-full items-center justify-center flex-shrink-0">
+                        <Image
+                          src={testimonial.avatar}
+                          alt={testimonial.name}
+                          className="max-h-full"
+                        />
+                      </div>
+                      <div>
+                        <div className="font-semibold">{testimonial.name}</div>
+                        <div className="text-sm text-white/40">
+                          {testimonial.position}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <p className="mt-4 text-sm md:text-base md:mt-6">{testimonial.text}</p>
-              </Card>
+                    <p className="mt-4 text-sm md:text-base md:mt-6">{testimonial.text}</p>
+                  </Card>
+                ))}
+              </Fragment>
             ))}
           </div>
         </div>
