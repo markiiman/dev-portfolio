@@ -32,8 +32,8 @@ export const ProjectsSection = () => {
                   <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
 
                   <ul className="flex flex-col gap-4 mt-4 md:mt-5">
-                    {project.results.map((result) => (
-                      <li className="flex gap-2 text-sm text-white/50 md:text-base">
+                    {project.results.map((result, resultIndex) => (
+                      <li key={resultIndex} className="flex gap-2 text-sm text-white/50 md:text-base">
                         <CheckCircleIcon className="size-5 md:size-6" />
                         <span>{result.title}</span>
                       </li>
